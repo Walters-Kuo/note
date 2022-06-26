@@ -30,10 +30,10 @@ brew install --cask iterm2
     MesloLGS NF Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
     MesloLGS NF Bold Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 	
-	B. Double-click on each file and click "Install". This will make MesloLGS NF font available to all applications on your system
+    B. Double-click on each file and click "Install". This will make MesloLGS NF font available to all applications on your system
 	
-	C. Open Settings in Visual Studio Code.
+    C. Open Settings in Visual Studio Code.
     * On PC: press Ctrl+, or click File → Preferences → Settings.
     * On Mac: press ⌘ , or click Code → Preferences → Settings.
 	
-	D. Enter terminal.integrated.fontFamily in the search box at the top of Settings tab and set the value below to “MesloLGS NF”
+    D. Enter terminal.integrated.fontFamily in the search box at the top of Settings tab and set the value below to “MesloLGS NF”
