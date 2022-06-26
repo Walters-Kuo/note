@@ -1,0 +1,37 @@
+brew install --cask iterm2
+
+1. Install my-zshsh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+2. Install powerlevel10k theme
+    git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+    Then edit your ~/.zshrc and set ZSH_THEME="powerlevel10k/powerlevel10k"
+    source .zshrc
+
+3. zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+4. Syntax highlighting
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    Activate the plugin in ~/.zshrc:
+    plugins=( 
+    	# other plugins...
+	    zsh-autosuggestions
+		zsh-syntax-highlighting
+    )
+
+5. Enable word jumps and word deletion, aka natural text selection
+    By default, word jumps (option + → or ←) and word deletions (option + backspace) do not work. To enable these, 
+    go to "iTerm → Preferences → Profiles → Keys → Key mappings → Presets... → Natural Text Editing → remove “
+
+    * MesloLGS NF Regular.ttf
+    * MesloLGS NF Bold.ttf
+    * MesloLGS NF Italic.ttf
+    * MesloLGS NF Bold Italic.ttf
+	
+	Double-click on each file and click "Install". This will make MesloLGS NF font available to all applications on your system
+	
+	Open Settings in Visual Studio Code.
+    * On PC: press Ctrl+, or click File → Preferences → Settings.
+    * On Mac: press ⌘ , or click Code → Preferences → Settings.
+	
+	Enter terminal.integrated.fontFamily in the search box at the top of Settings tab and set the value below to “MesloLGS NF”
