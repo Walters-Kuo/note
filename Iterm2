@@ -1,3 +1,5 @@
+easy install iterm2, my-zsh, powerlevel10k theme and fix vs code terminal issue
+
 brew install --cask iterm2
 
 1. Install my-zshsh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
