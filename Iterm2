@@ -21,17 +21,19 @@ brew install --cask iterm2
 
 5. Enable word jumps and word deletion, aka natural text selection
     By default, word jumps (option + → or ←) and word deletions (option + backspace) do not work. To enable these, 
-    go to "iTerm → Preferences → Profiles → Keys → Key mappings → Presets... → Natural Text Editing → remove “
+    go to "iTerm → Preferences → Profiles → Keys → Key mappings → Presets... → Natural Text Editing → remove"
 
-    * MesloLGS NF Regular.ttf
-    * MesloLGS NF Bold.ttf
-    * MesloLGS NF Italic.ttf
-    * MesloLGS NF Bold Italic.ttf
+6. Vs code terminal issue
+    A. Download these four ttf files: 
+    MesloLGS NF Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+    MesloLGS NF Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
+    MesloLGS NF Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
+    MesloLGS NF Bold Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 	
-	Double-click on each file and click "Install". This will make MesloLGS NF font available to all applications on your system
+	B. Double-click on each file and click "Install". This will make MesloLGS NF font available to all applications on your system
 	
-	Open Settings in Visual Studio Code.
+	C. Open Settings in Visual Studio Code.
     * On PC: press Ctrl+, or click File → Preferences → Settings.
     * On Mac: press ⌘ , or click Code → Preferences → Settings.
 	
-	Enter terminal.integrated.fontFamily in the search box at the top of Settings tab and set the value below to “MesloLGS NF”
+	D. Enter terminal.integrated.fontFamily in the search box at the top of Settings tab and set the value below to “MesloLGS NF”
