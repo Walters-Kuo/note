@@ -3,9 +3,14 @@ easy install iterm2, my-zsh, powerlevel10k theme and fix vs code terminal issue
 install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+- Run these two commands in your terminal to add Homebrew to your PATH:
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/walterskuo/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    
 brew install --cask iterm2
 
-1. Install my-zshsh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+1. Install my-zshsh 
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 2. Install powerlevel10k theme
     git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
@@ -20,8 +25,8 @@ brew install --cask iterm2
     Activate the plugin in ~/.zshrc:
     plugins=( 
     	# other plugins...
-	    zsh-autosuggestions
-		zsh-syntax-highlighting
+	zsh-autosuggestions
+	zsh-syntax-highlighting
     )
 
 5. Enable word jumps and word deletion, aka natural text selection
