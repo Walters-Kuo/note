@@ -15,7 +15,8 @@ brew install --cask iterm2
 2. Install powerlevel10k theme
     git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
     Then edit your ~/.zshrc and set ZSH_THEME="powerlevel10k/powerlevel10k"
-    source .zshrc
+    go to "iTerm → Preferences → Profiles → Text → Font → NesloLGS NF 
+    source .zshrc or p10k configure
 
 3. zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
