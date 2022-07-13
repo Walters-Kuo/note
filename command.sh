@@ -12,3 +12,12 @@ sudo !! #sudo mv /etc/hostname /etc/hostname.old
 mkdir /tmp/test
 cd !$ #cd /tmp/test
 
+#hotkey
+ctr + L to clear the screen
+
+#sed
+brew install gnu-sed
+alias sed=gsed
+
+#alias
+alias ll='ls -alFh'

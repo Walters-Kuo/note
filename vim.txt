@@ -1,0 +1,3 @@
+G move to the end of the file
+gg move to the beginning of the file
+
