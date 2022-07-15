@@ -15,9 +15,30 @@ cd !$ #cd /tmp/test
 #hotkey
 ctr + L to clear the screen
 
+
+#ssh
+ssh-keygen -t rsa
+ssh-keygen -t rsa -b 2048 -C v20-gitlab
+
+#.ssh/config
+Host xxx
+Hostname 10.0.0.1
+Port 22
+User git
+IdentityFile ~/.ssh/gitlab
+IdentitiesOnly yes
+
 #sed
 brew install gnu-sed
 alias sed=gsed
 
-#alias
+#env
 alias ll='ls -alFh'
+
+
+#brew
+brew info python
+
+#network
+lsof -nP -iTCP -sTCP:LISTEN
+lsof -n -i | grep LISTEN

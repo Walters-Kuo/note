@@ -1,0 +1,15 @@
+https://freemacsoft.net/appcleaner/
+
+firefox
+chrome
+filezilla
+iterm2
+
+postman
+vscode
+github desktop
+tadama - workflow timer
+draw.io
+
+telegram
+line
