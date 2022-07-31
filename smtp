@@ -5,7 +5,7 @@ depth=1 C = TW, ST = mail server, L = TP, O = mail server, OU = Mail Team Server
 verify error:num=19:self signed certificate in certificate chain
 220 ESMTP MAIL Server
 ehlo host
-250-mail.aidlite.com.tw
+250-smtp.xxx.com.tw
 250-PIPELINING
 250-SIZE 10240000
 250-VRFY
@@ -25,10 +25,10 @@ loginname-base64
 password-base64
 235 2.7.0 Authentication successful
 
-MAIL FROM: web@aidlite.com.tw
+MAIL FROM: web@xxx.com.tw
 250 2.1.0 Ok
 
-RCPT TO: walters.kuo66@gmail.com
+RCPT TO: abc@gmail.com
 250 2.1.5 Ok
 
 DATA
