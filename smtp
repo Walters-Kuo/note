@@ -1,5 +1,6 @@
 openssl s_client -connect smtp-server:smtp-port -quiet
-openssl s_client -connect mail.aidlite.com.tw:465 -quiet
+
+openssl s_client -connect stmp.xxx.com.tw:465 -quiet
 depth=1 C = TW, ST = mail server, L = TP, O = mail server, OU = Mail Team Server cert, CN = www.mail.org, emailAddress = help@mail.org
 verify error:num=19:self signed certificate in certificate chain
 220 ESMTP MAIL Server
