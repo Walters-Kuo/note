@@ -12,7 +12,8 @@ sudo !! #sudo mv /etc/hostname /etc/hostname.old
 mkdir /tmp/test
 cd !$ #cd /tmp/test
 
-sudo user vs su user or sudo su vs su - 
+sudo user vs su user or sudo su vs su -
+sudo su - centos
 su requires the password of the target account, while sudo requires the password of the current user. 
 
 #hardware
@@ -42,6 +43,8 @@ alias sed=gsed
 alias ll='ls -alFh'
 
 
+tar -xvf
+
 #brew
 brew info python
 
@@ -67,4 +70,5 @@ ISO8601 UTC timestamp + ms      | date --utc +%FT%T.%3NZ     | $(date --utc +%FT
 ISO8601 Local TZ timestamp      | date +%FT%T%Z              | $(date +%FT%T%Z)
 YYYY-MM-DD (Short day)          | date +%F\(%a\)             | $(date +%F\(%a\))
 YYYY-MM-DD (Long day)           | date +%F\(%A\)             | $(date +%F\(%A\))
+
 
