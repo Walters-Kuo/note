@@ -3,6 +3,12 @@ easy install iterm2, my-zsh, powerlevel10k theme and fix vs code terminal issue
 fix warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
 go to and uncheck "iTerm → Preferences → Profiles → Advanced → Set locale environment variables on startup"
 
+if centos
+vi /etc/environment; #add these lines...
+LANG=en_US.utf-8
+LC_ALL=en_US.utf-8
+
+
 install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 

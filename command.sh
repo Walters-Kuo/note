@@ -26,6 +26,7 @@ ctr + L to clear the screen
 #ssh
 ssh-keygen -t rsa
 ssh-keygen -t rsa -b 2048 -C v20-gitlab
+ssh-copy-id -i ~/.ssh/id_rsa.pub -p 2200 vagrant@127.0.0.1
 
 #.ssh/config
 Host xxx
@@ -71,4 +72,6 @@ ISO8601 Local TZ timestamp      | date +%FT%T%Z              | $(date +%FT%T%Z)
 YYYY-MM-DD (Short day)          | date +%F\(%a\)             | $(date +%F\(%a\))
 YYYY-MM-DD (Long day)           | date +%F\(%A\)             | $(date +%F\(%A\))
 
-
+#time
+timedatectl list-timezones | grep Taipei
+sudo timedatectl set-timezone Asia/Taipei

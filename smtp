@@ -1,11 +1,47 @@
+telnet smtp.domain.com 25
 openssl s_client -connect smtp-server:smtp-port -quiet
+openssl s_client -connect smtp.sendgrid.com:465
+openssl s_client -starttls smtp -connect smtp.sendgrid.com:587
 
-openssl s_client -connect stmp.xxx.com.tw:465 -quiet
+echo -ne "\0username\0password" | base64 #omit echoing trailing newline
+AUTH PLAIN AHVzZXJuYW1lAHBhc3N3b3Jk
+
+AUTH LOGIN
+334 VXNlcm5hbWU6
+loginname-base64-without-newline
+334 UGFzc3dvcmQ6
+password-base64-without-newline
+235 Authentication successful
+
+MAIL FROM: from@domain.com
+250 Sender address accepted
+rcpt to: john@doe.com 
+#you have to make sure to type the rcpt to command in lowercase. 
+#Pressing R in the client session instructs openssl to renegotiate the TLS connection.
+250 Recipient address accepted
+DATA
+354 Continue
+From: from@domain.com
+Subject: Test message!
+
+Hi,
+
+This is a test message!
+
+Best,
+Steven
+.
+250 Ok: queued as bazLUK4DEBqH25dH6iZuNg
+quit
+Type QUIT to close the session.
+
+#ssl certificate error
+openssl s_client -connect smtp.xxx.com:465 -quiet
 depth=1 C = TW, ST = mail server, L = TP, O = mail server, OU = Mail Team Server cert, CN = www.mail.org, emailAddress = help@mail.org
 verify error:num=19:self signed certificate in certificate chain
 220 ESMTP MAIL Server
 ehlo host
-250-smtp.xxx.com.tw
+250-smtp.xxx.com
 250-PIPELINING
 250-SIZE 10240000
 250-VRFY
@@ -19,10 +55,10 @@ ehlo host
 
 auth login
 334 VXNlcm5hbWU6
-loginname-base64
+loginname-base64-without-newline
 
 334 UGFzc3dvcmQ6
-password-base64
+password-base64-without-newline
 235 2.7.0 Authentication successful
 
 MAIL FROM: web@xxx.com.tw
@@ -38,5 +74,45 @@ bala bala
 
 250 2.0.0 Ok: queued as 1E46D800D1
 
+quit
+221 2.0.0 Bye
+
+
+#working flow
+openssl s_client -connect smtp.xxx.com:465 -quiet
+depth=2 C = US, ST = New Jersey, L = Jersey City, O = The USERTRUST Network, CN = USERTrust RSA Certification Authority
+verify return:1
+depth=1 C = AT, O = ZeroSSL, CN = ZeroSSL RSA Domain Secure Site CA
+verify return:1
+depth=0 CN = smtp.xxx.com
+verify return:1
+220 ESMTP MAIL Server
+ehlo host
+250-smtp.xxx.com
+250-PIPELINING
+250-SIZE 20480000
+250-VRFY
+250-ETRN
+250-AUTH PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250-SMTPUTF8
+250 CHUNKING
+auth login
+334 VXNlcm5hbWU6
+echo -ne "loginname" | base64
+334 UGFzc3dvcmQ6
+echo -ne "password" | base64
+235 2.7.0 Authentication successful
+MAIL FROM:web@xxx.com.tw
+250 2.1.0 Ok
+RCPT TO:abc@gmail.com
+250 2.1.5 Ok
+DATA
+354 End data with <CR><LF>.<CR><LF>
+bala bala
+.
+250 2.0.0 Ok: queued as 99ED5C086
 quit
 221 2.0.0 Bye

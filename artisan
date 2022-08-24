@@ -1,0 +1,18 @@
+php artisan --version
+
+at document root
+php artisan --version
+Laravel Framework 5.5.40
+
+php artisan route:clear; php artisan view:clear; php artisan config:clear;php artisan cache:clear
+
+.env
+SESSION_DRIVER=cookie
+SESSION_DOMAIN=www.aidlite.com.tw
+
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=aidlite.web@gmail.com
+MAIL_PASSWORD=trvxmrhavfbodapq
+MAIL_ENCRYPTION=tls
