@@ -1,12 +1,25 @@
 
 podman pull docker.io/library/postgres
 podman run --name postgre -d -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=passwd docker.io/library/postgres
+docker run -d -p 27017:27017 --name mongodb mongo -v /data/db:/data/db
+podman run -d mongo -p 27017:27017 -it -v src:/data/db --name mongodb  
+podman run -itd --name mongo -p 27017:27017 mongo -v src:/data/db --auth
+run -itd --name mongo -p 27017:27017 mongo -v src:/data/db
+
+podman run --name mongo -d -p 27017:27017 -v src:/data/db:Z mongo
+podman volume inspect src
+podman volume ls
+podman run --rm -it --network host mongo mongo
+
 podman run --interactive --tty --name u1 --volume /tmp/.X11-unix:/tmp/.X11-unix \
 --env DISPLAY --device /dev/dri --device /dev/snd --device /dev/input \
 --volume /etc/localtime:/etc/localtime:ro --volume /Users/walters/workarea/podman/sharing:/mnt ubuntu
 
 podman exec --interactive --tty --user $(whoami) --workdir /home/$(whoami) u1 /bin/bash
 podman exec --interactive --tty --user walters --workdir /home/walters u1 /bin/bash
+docker exec -it mongo_example bash
+podman exec -it mongo mongo admin
+
 podman machine set --rootful
 
 

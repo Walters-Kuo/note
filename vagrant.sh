@@ -4,7 +4,11 @@ vagrant box add precise64 http://files.vagrantup.com/precise64.box
 vagrant init precise64
 vagrant up
 vagrant ssh
+vagrant ssh --debug
 vagrant halt
+
+vagrant ssh-config > ssh_config
+scp -F ./ssh_config default:/home/vagrant/.bashrc .
 
 vagrant ssh-config
 Host u1

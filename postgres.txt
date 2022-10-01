@@ -1,5 +1,10 @@
 docker exec -it postgres-wnPk psql -U postgres
 
 
+psql -h host -d database -U user -W
+
+
 #psql
+select version();
 \l show all databases
+\dt	List available tables
