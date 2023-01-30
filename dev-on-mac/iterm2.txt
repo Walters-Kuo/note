@@ -16,7 +16,7 @@ install brew
     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/walterskuo/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
     
-brew install --cask iterm2
+brew install iterm2
 
 1. Install my-zshsh 
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
