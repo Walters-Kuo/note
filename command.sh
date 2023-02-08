@@ -85,3 +85,6 @@ Number 	Permission Type         Symbol
 #time
 timedatectl list-timezones | grep Taipei
 sudo timedatectl set-timezone Asia/Taipei
+
+
+find . -name 'Queen*' //find file name Queenxxxxx
