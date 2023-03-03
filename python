@@ -12,3 +12,19 @@ sys.path
 #install the lastest of a package
 python -m pip install novas
 pip freeze > requirements.txt
+
+
+#map
+def test(x):
+    return x*2 
+
+mylist = [1, 2, 3, 4, 5] 
+
+ans_list = []
+for ele in mylist:
+    ans_list.append(test(ele))
+print("test with for and basic list method = ", ans_list)
+
+print("test with for in list = ", [test(ele) for ele in mylist])
+
+print("test with map = ", list(map(test, mylist)))
