@@ -17,6 +17,8 @@ pip freeze > requirements.txt
 #map
 def test(x):
     return x*2 
+or 
+test = lambda x: x * 2
 
 mylist = [1, 2, 3, 4, 5] 
 
@@ -28,3 +30,32 @@ print("test with for and basic list method = ", ans_list)
 print("test with for in list = ", [test(ele) for ele in mylist])
 
 print("test with map = ", list(map(test, mylist)))
+
+#Lambda functions are particularly useful in cases where we need to have a short one-time use function.
+Syntax: lambda arguments: expression
+
+even_or_odd = lambda a : a % 2 == 0
+numbers = [1,2,3,4,5]
+even = list(map(even_or_odd, numbers))
+print(map(even_or_odd, numbers))
+print(even)
+
+
+#Exceptional Handling
+#An exception is a condition that occurs during the execution of the program and interrupts the execution. 
+#We use to try and except blocks to handle exceptions in python. To handle multiple exceptions at a time we use multiple except blocks.
+
+import sys
+try:
+    f = open('myfile.txt')
+    s = f.readline()
+    i = int(s.strip())
+except OSError as err:
+    print("OS error: {0}".format(err))
+except ValueError:
+    print("Could not convert data to an integer.")
+except:
+    print("Unexpected error", sys.exc_info()[0])
+    raise
+finally:
+    print("Operation Successfully Done!!")
