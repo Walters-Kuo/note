@@ -88,3 +88,8 @@ sudo timedatectl set-timezone Asia/Taipei
 
 
 find . -name 'Queen*' //find file name Queenxxxxx
+
+#which shell am i using
+echo $SHELL
+ps -p $$
+
