@@ -2,4 +2,8 @@ How to Disable Automatic Capitalization of Words in macOS
 System Preferences → Keyboard → Text
 Uncheck the box for “Capitalize words automatically”
 
+#The Ultimate vimrc
+git clone https://github.com/amix/vimrc.git ~/.vim_runtime;
+sh ~/.vim_runtime/install_awesome_vimrc.sh
 
+cd ~/.vim_runtime && git pull --rebase && cd - #to update the vimrc scripts, if you need
