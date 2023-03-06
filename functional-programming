@@ -1,0 +1,6 @@
+要撰寫 functional programming，這些觀念非常重要：
+
+    撰寫 pure function，盡量避免 side effect，讓除錯更加容易
+    善用 higher order function，將部份實作委外，讓程式更有彈性
+    使用 lamda 寫出更簡短的 function
+    宣告式 (declarative) 思考，將程式步驟拆成更小、更明確運算單元，讓程式更好閱讀
