@@ -18,3 +18,5 @@ SELECT * from gl_system_api_test;
 SHOW VARIABLES LIKE 'version';
 
 FLUSH PRIVILEGES; 
+where `prompt_member_id` is not null;
+where `prompt_member_id` is null;
