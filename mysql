@@ -1,3 +1,20 @@
+where vs having
+Standard SQL doesn't allow you to refer to a column alias in a WHERE clause. 
+This restriction is imposed because when the WHERE code is executed, the column value may not yet be determined.
+
+WHERE clause allows a condition to use any table column, but it cannot use aliases or aggregate functions. HAVING clause allows a condition to use a selected (!) column, alias or an aggregate function.
+
+This is because WHERE clause filters data before select, but HAVING clause filters resulting data after select.
+
+select platform, count(platform) platform_total, DATE(FROM_UNIXTIME(update)) as platform_date 
+from login 
+where update between 1678896000 and 1678982399 
+group by platform
+order by platform_date;
+between 1678896000 and 1678982399;
+
+2023-03-16 00-23:59 --> 1678896000 and 1678982399 
+
 docker
 docker exec -it mysql mysql -uroot -p
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
@@ -18,5 +35,5 @@ SELECT * from gl_system_api_test;
 SHOW VARIABLES LIKE 'version';
 
 FLUSH PRIVILEGES; 
-where `prompt_member_id` is not null;
-where `prompt_member_id` is null;
+where column is not null;
+where column is null;
