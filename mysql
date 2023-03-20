@@ -15,6 +15,14 @@ between 1678896000 and 1678982399;
 
 2023-03-16 00-23:59 --> 1678896000 and 1678982399 
 
+select os, count(os) as total, DATE(FROM_UNIXTIME(update)) as os_date from member_login group by os_date having os_date >= '2023-03-01';
+select os, DATE(FROM_UNIXTIME(update)) as os_date from login where DATE(FROM_UNIXTIME(update)) >= '2023-03-01';
+
+WHERE DATE(datetime) = '2009-10-20'
+WHERE datetime LIKE '2009-10-20%'
+SELECT DATE_ADD("2023-03-17", INTERVAL -6 DAY); //2023-03-11
+
+
 docker
 docker exec -it mysql mysql -uroot -p
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
