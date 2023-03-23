@@ -45,3 +45,5 @@ SHOW VARIABLES LIKE 'version';
 FLUSH PRIVILEGES; 
 where column is not null;
 where column is null;
+
+常見註釋符的表達方式：#　或　--空格　或　/*　*/
