@@ -1,0 +1,23 @@
+修改到一半，不想commit 
+git stash
+接著就可以 git checkout <otherBranch>
+
+切回剛剛的 branch 後，要怎麼拿回剛剛存的狀態呢?
+git stash list 
+stash@{0}: WIP on feature/23030701-報表總覽下拉
+
+git stash pop stash@{0}
+git stash pop //沒有指定要 pop 哪一個 Stash，會從編號最小的，也就是 stash@{0} 開始拿
+
+
+git stash 的小衝突
+git stash list 是空的
+
+將 uncommitted changes stage 起來
+git add -u .
+
+拉回暫存的內容
+git stash pop
+
+unstage 所有檔案
+git reset
