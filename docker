@@ -2,3 +2,12 @@ docker run --name jenkins -d --restart always -p 8080:8080 -p 50000:50000 -v /Us
 
 
 docker compose up
+
+＃創建一個網域
+docker network create test-net
+docker run -d 
+    --network test-net --network-alias mysql 
+    -v todo-mysql-data:/var/lib/mysql 
+    -e MYSQL_ROOT_PASSWORD=<your-password> 
+    -e MYSQL_DATABASE=todos 
+    mysql:laste
