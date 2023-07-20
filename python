@@ -11,7 +11,7 @@ sys.path
 
 #install the lastest of a package
 python -m pip install novas
-pip freeze > requirements.txt
+python -m pip freeze > requirements.txt
 
 
 #map
