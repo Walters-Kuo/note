@@ -2,11 +2,6 @@ How to Disable Automatic Capitalization of Words in macOS
 System Preferences → Keyboard → Text
 Uncheck the box for “Capitalize words automatically”
 
-#make an alias in .zshrc or .bash_profile
-alias python=python3.11
-alias ll='ls -alh'
-
-
 #The Ultimate vimrc
 git clone https://github.com/amix/vimrc.git ~/.vim_runtime;
 sh ~/.vim_runtime/install_awesome_vimrc.sh
@@ -14,6 +9,12 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 cd ~/.vim_runtime && git pull --rebase && cd - #to update the vimrc scripts, if you need
 
 #install python and package
+brew install python@3.11
+
 pip 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
+
+#make an alias in .zshrc or .bash_profile
+alias python=python3.11
+alias ll='ls -alh'
