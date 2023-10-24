@@ -1,2 +1,38 @@
 indentation 縮排
 block 程式區塊
+
+
+User Acceptance Testing (UAT)　用戶驗收測試
+
+~ tilde ˈtildə 波浪號
+“ - “ hyphen 連字號
+— dash 破折號
+_ underline 底線
+. dot 點
+, comma
+‘ apostrophe 
+“ double-quotes mark
+‘  single-quotes mark
+` 撇線 back quote 
+& ampersand / and 以及
+“ * “ asterisk 
+: colon 冒號
+; semi-colon
+… ellipsis
+{ } curly brackets / braces 大括號
+[ ] square brackets / brackets 中括號
+( ) parentheses / round brackets 小括號
+<> angle brackets
+<<>> french quotes  書名號
+/ slash
+\ backslash-escaping ‘\’ or \\
+^ caret 
+a whole number 整數
+
+cat catenate
+._ dot underscore
+archive file
+! exclamation marks 驚嘆號
+
+# hashtag
+#1 number one

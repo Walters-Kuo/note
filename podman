@@ -1,4 +1,10 @@
 
+brew install podman
+brew install podman-desktop
+podman machine init
+podman machine start
+podman info
+
 podman pull docker.io/library/postgres
 podman run --name postgre -d -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=passwd docker.io/library/postgres
 docker run -d -p 27017:27017 --name mongodb mongo -v /data/db:/data/db
@@ -37,6 +43,24 @@ podman rmi [image-name]	Remove an image.	podman rmi docker.io/library/ubuntu
 podman info	Receive information about the Podman installation.	podman info
 
 
+
+podman run -dt \
+--name nginx \
+--pod webdev \
+--volume ~/Desktop/udn/pod:/etc/nginx/conf.d:ro \
+--volume ~/Desktop/udn/pod/dev:/var/www/dev \
+--restart on-failure \
+docker.io/library/nginx:alpine
+
+
+podman run -dt \
+--name php7 \
+--pod webdev \
+# just like with nginx, add more volumes here to serve more websites.
+--volume ~/Desktop/udn/pod/dev:/var/www/dev:rw \
+--restart on-failure \
+docker.io/library/php:7.4-fpm-alpine
+
 podman machine start                                                                                       ✔  11:00:33 
 Starting machine "podman-machine-default"
 Waiting for VM ...
@@ -62,4 +86,6 @@ following command in your terminal session:
 
 	export DOCKER_HOST='unix:///Users/walters/.local/share/containers/podman/machine/podman-machine-default/podman.sock'
 
-Machine "podman-machine-default" started successfully
+Machine "podman-machine-default" started successfully"
+
+

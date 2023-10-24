@@ -1,3 +1,6 @@
+gt greater than { field: { $gt: value } }
+lt 
+
 use test
 db.createUser(
   {

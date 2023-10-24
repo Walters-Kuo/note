@@ -18,6 +18,7 @@ firefox
 chrome
 filezilla
 iterm2
+Keka archiver https://github.com/aonez/Keka/releases
 
 postman
 vscode

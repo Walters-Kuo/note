@@ -21,3 +21,10 @@ git stash pop
 
 unstage 所有檔案
 git reset
+
+git commit -m "conflict fixed"
+When you have resolved this problem, run "git rebase --continue".
+If you prefer to skip this patch, run "git rebase --skip" instead.
+To check out the original branch and stop rebasing, run "git rebase --abort".
+
+git blame 查哪一行是誰改的

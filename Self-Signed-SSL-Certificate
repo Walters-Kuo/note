@@ -1,0 +1,31 @@
+sudo yum install openssl
+
+
+Step 1: Create an RSA Keypair #uses 2048 bit encryption and outputs a file called keypair.key
+openssl genrsa -des3 -passout pass:x -out keypair.key 2048 
+
+Step 2: Extract the Private Key into the nginx Folder
+mkdir /etc/nginx/certificate
+
+Step 3: Creating a “Certificate Signing Request” (CSR) File #To extract the private key from the keypair file
+openssl rsa -passin pass:x -in keypair.key -out /etc/nginx/certificate/money.key
+rm keypair.key
+#sign ourselves or submit to a “Certificate Authority”
+openssl req -new -key /etc/nginx/certificate/money.key -out /etc/nginx/certificate/money.csr
+
+
+Step 4: Creating the Certificate “.crt” File 
+openssl x509 -req -days 365 -in /etc/nginx/certificate/money.csr -signkey /etc/nginx/certificate/money.key -out /etc/nginx/certificate/money.crt
+
+
+
+Step 5: Configuring Nginx to Use the Files
+server {
+    listen              443 ssl;
+    server_name         money01.udn.com;
+
+    ssl_certificate     /etc/nginx/scertificate/money.crt;
+    ssl_certificate_key /etc/nginx/scertificate/money.key;
+    ssl_protocols       TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+    ssl_ciphers         HIGH:!aNULL:!MD5;
+}

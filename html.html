@@ -1,0 +1,19 @@
+
+http-equiv stands for: hypertext transfer protocol equivalent and is equivalent to HTTP response header
+in HTML as meta TAG has the same effect as declaring HTTP response header
+Content-Type: text/html; charset=utf-8
+That is why they are called ‘equivalent’. It is recommended to use HTTP header over HTML http-equiv meta tags. 
+Multiple headers with the same name may be present only if the values may be concatenated. 
+
+
+<script> defer Attribute
+A script that will be downloaded in parallel to parsing the page, and executed after the page has finished parsing:
+<script src="demo_defer.js" defer></script>
+
+note : The defer attribute is only for external scripts (should only be used if the src attribute is present)
+Note: There are several ways an external script can be executed:
+
+If async is present: The script is downloaded in parallel to parsing the page, and executed as soon as it is available (before parsing completes)
+If defer is present (and not async): The script is downloaded in parallel to parsing the page, and executed after the page has finished parsing
+If neither async or defer is present: The script is downloaded and executed immediately, blocking parsing until the script is completed
+

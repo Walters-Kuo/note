@@ -25,8 +25,9 @@ ctr + L to clear the screen
 
 #ssh
 ssh-keygen -t rsa
-ssh-keygen -t rsa -b 2048 -C v20-gitlab
+ssh-keygen -t rsa -b 4096 -C "your@email.com" -f name_rsa
 ssh-copy-id -i ~/.ssh/id_rsa.pub -p 2200 vagrant@127.0.0.1
+cat name_rsa.pub | pbcopy #copy public key to the clipboard
 
 #.ssh/config
 Host xxx
