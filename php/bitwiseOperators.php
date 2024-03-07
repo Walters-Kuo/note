@@ -1,9 +1,4 @@
-<?php
-
-$example = 'Appel @ Ratte';
-$example2 = 'apple vs ratte'
-$output = preg_split('/ (@|vs) /', $input);
-
+<?
 交集(And)：
 echo 11&13; //output:9
 /*

@@ -1,4 +1,22 @@
 #bash
+cut -d: -f1 /etc/passwd
+
+#list all service
+systemctl list-units --type=service
+systemctl list-units --type=service --state=running #only running
+
+php syntax detecte
+php -i | grep "Loaded Configuration File" #php.ini
+php -r 'echo date("Ymd", strtotime("-1 day"));'
+find ./ -name \*.php -not -path "./vendor/*"   \! -exec php -l {} \; >> ../syntax-result
+
+du -sh ./ #determine the size of a directory, -s summary, -h human readable
+du -sh ./* #list all files and directories in the current directory
+
+scp source_username@source_host:source_file [dest_userid@dest_host:]destination_dir
+scp source_username@source_host:source_file destination_dir
+
+rm -rf file #remove the file without prompting you for confirmation
 
 cd - #change the current directory to the previous working directory
 cd ~ #return to user's home directory
@@ -53,7 +71,8 @@ brew info python
 #network
 lsof -nP -iTCP -sTCP:LISTEN
 lsof -n -i | grep LISTEN
-
+netstat -tunlp
+netstat -rn 
         Format/result           |       Command              |          Output
 --------------------------------+----------------------------+------------------------------
 YYYY-MM-DD                      | date -I                    | $(date -I)
@@ -94,3 +113,5 @@ find . -name 'Queen*' //find file name Queenxxxxx
 echo $SHELL
 ps -p $$
 
+#crontab servcie
+service cron stop|start|restart|status

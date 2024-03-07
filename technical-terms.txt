@@ -1,3 +1,9 @@
+hacking
+CSRF Cross Site Request Forgery
+An advanced persistent threat (APT) 
+
+CORS Cross-Origin Resource Sharing
+
 indentation 縮排
 block 程式區塊
 

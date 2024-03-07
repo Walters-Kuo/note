@@ -19,6 +19,7 @@ chrome
 filezilla
 iterm2
 Keka archiver https://github.com/aonez/Keka/releases
+https://get.adobe.com/tw/reader/
 
 postman
 vscode

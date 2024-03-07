@@ -1,25 +1,34 @@
+docker container ls
+docker exec -it container /bin/bash
+docker compose up
+
 docker 
--v local-path:contain-path(WORKDIR)
+參數解釋：
+-name 容器名稱
+-v 實體位置對應容器內部位置 local-path:contain-path(WORKDIR)
+-d 背景執行
+-p 本機port 對應 容器port HOST_PORT:contrainer PORT
+-rm 結束後立即移除
+
+docker network inspect f20b833e3a5d (network-id)
+docker network disconnect -f udn-laravel_app-network Container-name-or-id
+
 
 docker run --name jenkins -d --restart always -p 8080:8080 -p 50000:50000 -v /Users/walterskuo/Desktop/data/jenkins:/var/jenkins_home jenkins/jenkins:lts
 
+docker build --no-cache -f dockerfiles/php.dockerfile .
 docker build --no-cache -t money . 
 docker run -v ~/Desktop/udn/nginx-php7.4/money:/var/www/mysite -p 80:80 -dp 443:443 money bash
-docker run -v ~/Desktop/udn/nginx-php7.4/money:/var/www/mysite -dp 80:80 money bash
 
+docker build --no-cache -t member . 
+docker run -v ~/Desktop/udn/twosite/member:/var/www/member -dp 80:80 member bash
 
-
+docker run -d --name redis-stack-server -p 6379:6379 redis/redis-stack-server:laste
 
 docker build --no-cache -t money01 . 
 docker run -v ~/Desktop/udn/nginx-php7.4/money:/var/www/mysite -p 443:443 -d money01
 
-docker exec -it container /bin/bash
-
-
 openssl x509 -req -days 365 -in /etc/nginx/scertificate/money.csr -signkey /etc/nginx/scertificate/money.key -out /etc/nginx/scertificate/money.crt
-
-
-docker compose up
 
 ＃創建一個網域
 docker network create test-net
@@ -29,7 +38,6 @@ docker run -d
     -e MYSQL_ROOT_PASSWORD=<your-password> 
     -e MYSQL_DATABASE=todos 
     mysql:laste
-
 
 Alpine
 Url: https://alpinelinux.org/

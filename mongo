@@ -1,3 +1,100 @@
+#mongo
+
+db.getCollection('auth_period')
+
+.find({account:'abc'}).sort({_id:-1})
+
+.find({
+  $and: [{ field1: value1 },
+    {$or: [
+        { field2: value2 },
+        { field3: value3 }
+      ]}
+  ]
+})
+
+.find({$or : [
+  {'auth_type':"GooglePlay"}, 
+  {'auth_type':"AppleStore"}
+  ]})
+
+.find({
+    status:{
+      $in : ['GooglePlay', 'AppleStore']
+    }
+  })
+
+count 
+結尾加 .count()
+.distinct("status")
+
+//同一個 account 的數量
+.aggregate([
+  {
+    $group: {
+      _id: "$account",  // group by "account" field
+      count: { $sum: 1 }  // increment the count for each document
+    }
+  }
+])
+
+//同一個 account 的數量大於 1
+.aggregate([
+  {
+    $group: {
+      _id: "$account",  // group by "account" field
+      count: { $sum: 1 }  // increment the count for each document
+    }
+  },
+  {
+    $match: {
+      count: { $gt: 1 }  // filter groups where count is greater than 1
+    }
+  }
+])
+
+//同一個 account 的數量大於 1的總數
+.aggregate([
+  {
+    $group: {
+      _id: "$account",  // group by "account" field
+      count: { $sum: 1 }  // increment the count for each document
+    }
+  },
+  {
+    $match: {
+      count: { $gt: 1 }  // filter groups where count is greater than 1
+    }
+  },
+  {
+    $group: {
+      _id: null,  // group all documents together
+      total: { $sum: 1 }  // increment the total for each document
+    }
+  }
+])
+docker run --name mongo4 -v ~/Desktop/udn/nginx-php7.4/mongo:/data/db -d -p 27017:27017 --rm mongo
+docker run --name mongo4 -p 27017:27017 --rm mongo mongod --auth
+docker stop mongo4
+docker exec -it mongo4 bash
+mongo
+show dbs # 顯示DB
+use dbname # 切換dbname
+show collections # 顯示集合
+db.getCollection('test').find({})
+db.system.version.find() # 資料查詢
+exit # 指令，離開資料庫或容器
+docker exec mongo4 mongo --eval "print(version())" #確認資料庫狀況
+
+"tree_id" : 0.0,
+    "name" : "John Doe",
+    "birthday" : "19760606",
+    "address" : {
+        "street" : "123 partk street",
+        "city" : "anytown",
+        "state" : "NY"
+    }
+    
 gt greater than { field: { $gt: value } }
 lt 
 
