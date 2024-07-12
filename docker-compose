@@ -1,5 +1,0 @@
-docker-compose up -d
-docker-compose down && docker-compose build --no-cache && docker-compose up -d
-docker-compose ps
-docker compose -f mysql-5.7.yml up -d
-

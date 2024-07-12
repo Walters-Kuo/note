@@ -1,0 +1,12 @@
+vscode
+cmd + K Cmd + S 開啟快速鍵一覽表
+cmd + / toggle line commnet 註解切換
+ctrl + K 刪該行游標之後的文字
+cmd + ↑ jump to begining of doc
+cmd + ↓ jump to end of doc
+option + ← / → 跳至前/後一個字
+ctrl + - 跳至上一個動作
+ctrl + shift + - 跳至回一個動作
+
+zed
+option + shift + performing a cursor drag //column selection mode
