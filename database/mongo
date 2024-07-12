@@ -1,8 +1,64 @@
-#mongo
+php
+->all()
+->get()->toArray()
+->toSql() will return the SQL query as a string, but it will not include the actual values
 
+rs.status() //選哪一台可以寫入
 db.getCollection('auth_period')
 
-.find({account:'abc'}).sort({_id:-1})
+.find({})
+.count({ field1: 0 }) //欄位 field1 = 0
+.sort({project_id:1})//Ascending
+.sort({_id:-1})//Descending
+.limit(1)
+.distinct("status")
+
+like
+find({custom_name:/人壽/})
+find({custom_name:{ $regex: /人壽/, $options: 'i' }})
+
+aggregate
+gt bigger than
+lt lower than
+gte
+
+$divide: ["$online_time", 1000]
+//除以 1000 轉成 date
+.aggregate([
+  {
+    $project: {
+      online_time: 1,
+      human_readable_time: {
+        $toDate: { $divide: ["$online_time", 1000] }
+      }
+    }
+  }
+])
+
+{ offline_time: { $gt: '2024-03-25' } }
+db.getCollection('sales_project').find({
+    db.yourCollection.find({ product_id: { $ne: 4 } });
+    }).sort({project_id:1})
+
+//find product_id not equal to 2 and 4
+.find({$and:[
+      {product_id:{$ne:2}},
+      {product_id:{$ne:4}},
+  ]
+  }).sort({_id:-1})
+
+//and
+.find({$and: [
+      { product_id: 2 },
+      { expire_time: { $gt: '2025-04-01' } }
+    ]}).sort({expire_time:-1})
+
+.find({$and: [
+      { provider_id: 2 },
+      { product_id:{ $ne: 4 }}
+      { offline_time: { $gt: new Date() } }
+    ]
+  })
 
 .find({
   $and: [{ field1: value1 },
@@ -14,7 +70,7 @@ db.getCollection('auth_period')
 })
 
 .find({$or : [
-  {'auth_type':"GooglePlay"}, 
+  {'auth_type':"GooglePlay"},
   {'auth_type':"AppleStore"}
   ]})
 
@@ -24,9 +80,7 @@ db.getCollection('auth_period')
     }
   })
 
-count 
-結尾加 .count()
-.distinct("status")
+
 
 //同一個 account 的數量
 .aggregate([
@@ -39,6 +93,7 @@ count
 ])
 
 //同一個 account 的數量大於 1
+
 .aggregate([
   {
     $group: {
@@ -94,9 +149,9 @@ docker exec mongo4 mongo --eval "print(version())" #確認資料庫狀況
         "city" : "anytown",
         "state" : "NY"
     }
-    
+
 gt greater than { field: { $gt: value } }
-lt 
+lt
 
 use test
 db.createUser(
@@ -105,7 +160,33 @@ db.createUser(
     pwd:  passwordPrompt(),   // or cleartext password
     roles: [ { role: "readWrite", db: "test" },
              { role: "readWrite", db: "accounts" },
-             { role: "read", db: "reporting" } 
+             { role: "read", db: "reporting" }
     ]
   }
 )
+
+//get product_id = 2 and group by account having count > 0
+db.getCollection('auth_period').aggregate([
+  { $match: { product_id: 2 } },
+  { $group: { _id: "$account", count: { $sum: 1 } } },
+  { $match: { count: { $gt: 0 } } }
+])
+
+
+db.yourCollection.find({
+  $expr: {
+    $gt: [
+      { $subtract: [ { $dateFromString: { dateString: "$expire_time" } }, new Date() ] },
+      365 * 24 * 60 * 60 * 1000
+    ]
+  }
+})
+
+
+.find({
+    product_id: 2,
+    $expr: {$gt: [{ $subtract: [ { $dateFromString: { dateString: "$expire_time" } }, new Date() ] },365]}
+    }).sort({expire_time:-1})
+
+//show current date
+db.runCommand({ eval: "new Date()" });

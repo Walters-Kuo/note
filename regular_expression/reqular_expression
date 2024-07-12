@@ -1,0 +1,32 @@
+
+mobile phone number
+/^09\d{8}$/ 09開頭 跟著8個數字 後結尾
+
+email address
+/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/
+
+^ The beginning of the string
+( start of a capturing group
+[a-zA-Z0-9._%-]+ matches one or more of the following characters : letters (both uppercase and lowercase),
+number, periods, underscores, percent signs, and hyphens.
+@ matches the @ symbol.
+[a-zA-Z0-9.-]+ matches one or more of the following characters : letters (both uppercase and lowercase), number,
+periods, and hyphens.
+\. matches a literal period character.
+[a-zA-Z]{2,} matches two or more letters (both uppercase and lowercase)
+) end of the capturing group
+$ the end of the string
+
+\s any whitespace character
+\S any non-whitespace character
+\d any digit
+\D any non-digit
+\w any word character
+\W any non-word character
+a|b alternate - match either a or b
+
+(.*?) is a non-greedy match for any characters (captured in a group).This ensures it matches as few characters as possible while still satisfying the rest of the pattern
+
+a? zero or one of a
+a* zero or more of a
+a+ one or more of a

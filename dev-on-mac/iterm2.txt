@@ -17,16 +17,16 @@ install brew
 - Run these two commands in your terminal to add Homebrew to your PATH:
     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/walterskuo/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
-    
+
 brew install iterm2
 
-1. Install my-zshsh 
+1. Install my-zshsh
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 2. Install powerlevel10k theme
     git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
     Then edit your ~/.zshrc and set ZSH_THEME="powerlevel10k/powerlevel10k"
-    go to "iTerm → Preferences → Profiles → Text → Font → NesloLGS NF 
+    go to "iTerm → Preferences → Profiles → Text → Font → NesloLGS NF
     source .zshrc or p10k configure
 
 3. zsh-autosuggestions
@@ -35,27 +35,31 @@ brew install iterm2
 4. Syntax highlighting
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
     Activate the plugin in ~/.zshrc:
-    plugins=( 
+    plugins=(
     	# other plugins...
 	zsh-autosuggestions
 	zsh-syntax-highlighting
     )
 
 5. Enable word jumps and word deletion, aka natural text selection
-    By default, word jumps (option + → or ←) and word deletions (option + backspace) do not work. To enable these, 
+    By default, word jumps (option + → or ←) and word deletions (option + backspace) do not work. To enable these,
     go to "iTerm → Preferences → Profiles → Keys → Key mappings → Presets... → Natural Text Editing → remove"
 
 6. Vs code terminal issue
-    A. Download these four ttf files: 
+    A. Download these four ttf files:
     MesloLGS NF Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
     MesloLGS NF Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
     MesloLGS NF Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
     MesloLGS NF Bold Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
-	
+
     B. Double-click on each file and click "Install". This will make MesloLGS NF font available to all applications on your system
-	
+
     C. Open Settings in Visual Studio Code.
     * On PC: press Ctrl+, or click File → Preferences → Settings.
     * On Mac: press ⌘ , or click Code → Preferences → Settings.
-	
+
     D. Enter terminal.integrated.fontFamily in the search box at the top of Settings tab and set the value below to “MesloLGS NF”
+
+7.zed terminal issue
+    settings --> open settings and past the config code as below
+    "terminal": {"font_family": "MesloLGS NF"}

@@ -10,22 +10,32 @@ Setting up your PATH
     eval "$(/opt/homebrew/bin/brew shellenv)"
 - Run brew help to get started
   brew doctor
-  
-  
+
+
 https://freemacsoft.net/appcleaner/
 
 firefox
 chrome
 filezilla
+tor
+
+editor
+vscode
+zed
+sequel ace
+compass
+
+sys
+docker
 iterm2
-Keka archiver https://github.com/aonez/Keka/releases
-https://get.adobe.com/tw/reader/
+tadama - workflow timer
+draw.ioKeka archiver https://github.com/aonez/Keka/releases
 
 postman
-vscode
 github desktop
-tadama - workflow timer
-draw.io
+sourcetree
+
 
 telegram
 line
+discord

@@ -1,9 +1,20 @@
 php artisan --version
 php artisan route:list
-php  artisan env
+php artisan env
+
+crontab
+service cron start
+php artisan schedule:run
+
+->when(function () {
+    $startDate = Carbon::parse('2024-05-23');
+    $endDate = Carbon::parse('2024-06-05');
+    $currentDate = Carbon::now();
+    return $currentDate->between($startDate, $endDate);
+});
 
 Do not forget to run the command php "artisan config:clear" after you have made the changes to the .env file.
-php  artisan env #which will return the correct version and 
+php  artisan env #which will return the correct version and
 
 Once the configuration has been cached, the .env file will not be loaded and all calls to the env function will return null.
 
@@ -34,7 +45,7 @@ make:test
 
 php artisan route:clear; php artisan view:clear; php artisan config:clear;php artisan cache:clear
 
-edit .env DB_CONNECTION 
+edit .env DB_CONNECTION
 php artisan config:clear;
 php artisan config:cache
 php artisan db pgsql
@@ -60,7 +71,7 @@ MAIL_USERNAME=web@gmail.com
 MAIL_PASSWORD=password
 MAIL_ENCRYPTION=tls
 
-app/Http/Kernal.php route middleware 
+app/Http/Kernal.php route middleware
 
 
 $query = $this->where('account', $account)
@@ -83,5 +94,5 @@ php artisan test
 //run single test of class
 php artisan test --filter xxxTraitTest
 
-//run single test of function 
+//run single test of function
 php artisan test --filter testRespondWithBase64

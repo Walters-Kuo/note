@@ -1,0 +1,41 @@
+原子 < 分子 < 組織 < 模板 < 頁面
+popover 彈出提示框
+tooltip 工具提示
+modal 對話框
+dropdown 下拉選單
+
+tag attribue 屬性
+css property 屬性
+    基本外觀 color, background, box-shadow, width, heigh
+    文字樣式 font-size, font-family, font-weight, font-style, text-align
+    盒模型 margin, padding, border, display, position, float, clear
+
+區塊元素
+<div> Division 區塊元素 </div>
+<p> Paragraph 段落 </p>
+<h1> Heading 1 標題元素 </h1><h6> Heading 6 標題6 </h6>
+
+列表元素
+<ul> Unordered List 無序列表 </ul>
+<li> list item 列表項目 </li>
+<ol> Ordered List 有序列表 </ol>
+<dl> Definition List 定義列表 </dl>
+<dt> Definition Term 定義名詞 </dt>
+<dd> Definition Description 定義描述 </dd>
+
+表單元素
+<form> 表單 </form>
+<input><botton>表單元素
+
+語意化區塊元素
+<header>、<footer>、<section>、<article>
+
+行內元素
+<span>通用行內元素</span>
+<a>連結元素</a>
+<strong>、<em>強調文字元素
+<br>換行元素
+<img>圖片元素
+
+組織在頁面上可以視為獨立的區塊，例如 header, footer, table, card
+模板是一個頁面的組成元素，例如 header, footer, sidebar, main content

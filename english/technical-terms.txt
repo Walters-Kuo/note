@@ -1,6 +1,6 @@
 hacking
 CSRF Cross Site Request Forgery
-An advanced persistent threat (APT) 
+An advanced persistent threat (APT)
 
 CORS Cross-Origin Resource Sharing
 
@@ -16,12 +16,12 @@ User Acceptance Testing (UAT)　用戶驗收測試
 _ underline 底線
 . dot 點
 , comma
-‘ apostrophe 
+‘ apostrophe
 “ double-quotes mark
 ‘  single-quotes mark
-` 撇線 back quote 
+` 撇線 back quote
 & ampersand / and 以及
-“ * “ asterisk 
+“ * “ asterisk
 : colon 冒號
 ; semi-colon
 … ellipsis
@@ -32,7 +32,7 @@ _ underline 底線
 <<>> french quotes  書名號
 / slash
 \ backslash-escaping ‘\’ or \\
-^ caret 
+^ caret
 a whole number 整數
 
 cat catenate
