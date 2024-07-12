@@ -1,0 +1,24 @@
+createing the SSL certificate
+openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout ./nginx/certs/walters.key -out ./nginx/certs/walters.crt
+
+location [modifier] [URI] {
+  ...
+  ...
+}
+The modifier in the location block is optional. Having a modifier in the location block will allow NGINX to treat a URL differently. Few most common modifiers are:
+
+none: If no modifiers are present in a location block then the requested URI will be matched against the beginning of the requested URI.
+=: The equal sign is used to match a location block exactly against a requested URI.
+~: The tilde sign is used for case-sensitive regular expression match against a requested URI.
+~*: The tilde followed by asterisk sign is used for case insensitive regular expression match against a requested URI.
+^~: The carat followed by tilde sign is used to perform longest nonregular expression match against the requested URI. If the requested URI hits such a location block, no further matching will takes place.
+
+last and break
+When rewrite module meets "last", it stops processing the current set and the rewritten request is passed once again to find the appropriate location (and the new set of rewriting rules). If the rule ends with "break", the rewriting also stops, but the rewritten request is not passed to another location.
+
+That is, if there are two locations: loc1 and loc2, and there's a rewriting rule in loc1 that changes loc1 to loc2 AND ends with last, the request will be rewritten and passed to location loc2. If the rule ends with break, it will belong to location loc1.
+
+location /member {
+  alias /usr/share/nginx/html/app_front/dist;
+  try_files $uri $uri/ /index.html last;#找不到檔案一律回傳index.html
+}

@@ -1,0 +1,14 @@
+move 移動指令
+G move to the end of the file 移動到檔案最尾端
+gg move to the beginning of the file 移動到檔案最開始
+
+edit 編輯指令
+p paste after tthe cursor 在遊標之後貼上
+shift + p paster before the cursor 在遊標之前貼上
+D delete to the end of the line
+ctr + z 暫時離開 fg 回到暫存
+
+line 整行指令
+shift + v select whole line 選擇整行
+d + d delete current line and copy to clipboard 刪除整行同時復制
+d + d is the equivalent shift + v then d 

@@ -1,0 +1,24 @@
+//fetch new vendor
+compose install 
+compose update 
+composer update jeroennoten/laravel-adminlte
+
+//only install for require-dev
+composer require laravel/telescope:^2.1 --dev
+
+//Disables the automatic update of the dependencies, only install telescope
+composer require laravel/telescope --dev --no-update
+
+composer require jenssegers/mongodb
+composer remove mongodb/mongodb
+
+//Use --with-all-dependencies (-W) to include root dependencies.
+composer remove --dev Facade\Ignition -W --no-update
+
+php --ri mongodb
+composer show mongodb/mongodb
+
+//Helper 底下加 Logger.php
+在config/app.php中建立alias
+composer dump-autoload
+可在Laravel任何地方使用Logger
