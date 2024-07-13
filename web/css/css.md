@@ -1,9 +1,17 @@
-#id {}
+```
+css
+
+id {}
 .class {}
 element.class {}
+```
 
-三種 CSS 引用方式(@import 極少用，因為 import 會在 HTML 載入後再加載 css，用戶體驗不好)
-external stylesheet 外部樣式 <link rel="stylesheet" type="text/css" href="styles.css">
+三種 CSS 引用方式(@import 極少用，因為 import 會在 HTML 載入後再加載 css，用戶體驗不好)<br />
+external stylesheet 外部樣式 ```<link rel="stylesheet" type="text/css" href="styles.css">```
+
+
+
+
 
 **用途**：
 共有樣式 internal stylesheet 內部樣式 <head><style>
@@ -90,10 +98,12 @@ solid 實心線, dashed 虛線
 清除浮動
 clear:both, overflow:hidden, ::after
 
-position: fixed, relative, absolute, static
-absolute 會將元素轉成 block
+
 
 transparent a.透明的；清澈的
 skew a.斜的，歪的，偏的
 
 border-width, border-style, border-color 簡化 border:1px solid red;
+
+文字居中 text-align:center;
+element 水平居中 margin:0 auto;//等同於 0 auto 0 auto
