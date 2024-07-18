@@ -1,10 +1,18 @@
-```
-css
+選擇器表示法
+id {}  
+.class {}  
+element.class {}  
 
-id {}
-.class {}
-element.class {}
-```
+vw（視口寬度單位）
+
+vw 是相對於視口寬度的單位。1 vw 等於視口寬度的 1%。例如，如果視口寬度是 1000px，那麼 1 vw 就是 10px。
+
+viewport（視口）
+
+視口是指用戶正在使用的顯示區域。它的寬度和高度是由瀏覽器窗口的尺寸決定的。在響應式設計中，我們經常使用視口單位（如 vw 和 vh）來確保元素根據視口的大小自動調整。
+
+例子說明
+
 
 三種 CSS 引用方式(@import 極少用，因為 import 會在 HTML 載入後再加載 css，用戶體驗不好)<br />
 external stylesheet 外部樣式 ```<link rel="stylesheet" type="text/css" href="styles.css">```
